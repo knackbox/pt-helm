@@ -1,14 +1,17 @@
 x-common: &common-config
   container_name: pt-helm
-  build:
-    context: .
-    dockerfile: Dockerfile
   ports:
     - "5000:5000"
 
+x-common-build: &common-build-config
+  <<: *common-config
+  build:
+    context: .
+    dockerfile: Dockerfile
+
 services:
   dev:
-    <<: *common-config
+    <<: *common-build-config
     volumes:
       - ./static/index_cache:/app/static/index_cache
       - ./static/chart_cache:/app/static/chart_cache
@@ -20,7 +23,17 @@ services:
     command: flask run --host=0.0.0.0 --port=5000 --debug
   
   test:
+    <<: *common-build-config
+    volumes:
+      - ./static/index_cache:/app/static/index_cache
+      - ./static/chart_cache:/app/static/chart_cache
+    environment:
+      - REPOSITORY_URL=https://charts.dexidp.io
+      - REPOSITORY_SOURCE=https://github.com/dexidp/helm-charts
+  
+  prod:
     <<: *common-config
+    image: ghcr.io/knackbox/pt-helm:latest
     volumes:
       - ./static/index_cache:/app/static/index_cache
       - ./static/chart_cache:/app/static/chart_cache
