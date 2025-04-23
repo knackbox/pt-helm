@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Helm</title>
+</head>
+<body>
+    <h1>Pull-through cache for Helm</h1>
+
+    <table border="1">
+        <tr>
+            <td>Upstream repository</td>
+            <td><a href="{{ upstream_repository }}">{{ upstream_repository }}</a></td>
+        </tr>
+        <tr>
+            <td>Repository source</td>
+            <td><a href="{{ repository_source }}">{{ repository_source }}</a></td>
+        </tr>
+        <tr>
+            <td>Upstream index.yaml</td>
+            <td><a href="{{ url_for('upstream_index') }}">{{ url_for('upstream_index') }}</a></td>
+        </tr>
+        <tr>
+            <td>Downstream index.yaml</td>
+            <td><a href="{{ url_for('downstream_index') }}">{{ url_for('downstream_index') }}</a></td>
+        </tr>
+    </table>
+
+    <h2>Charts</h2>
+    <div>
+        {% for entry in entries %}
+        <div>
+            <h3>{{ entry }}</h3>
+            <table border="1">
+            <tr>
+                <th>Version</th>
+                <th>URLs</th>
+                <th>Cache Age (Seconds)</th>
+            </tr>
+            {% for release in entries[entry] %}
+            <tr>
+                <td>{{ release.version }}</td>
+                <td>
+                    {% for url in release.urls %}
+                    <a href="/{{ url }}">/{{ url }}</a>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% if release.cache_age %}
+                    <p>{{ release.cache_age }}</p>
+                    {% endif%}
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
