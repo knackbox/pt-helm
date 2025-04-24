@@ -1,0 +1,94 @@
+repositories:
+  - name: kubernetes-dashboard
+    url: https://kubernetes.github.io/dashboard
+    source: https://github.com/kubernetes/dashboard/tree/master/charts
+  - name: projectcalico
+    url: https://docs.tigera.io/calico/charts
+    source: https://github.com/projectcalico/calico/tree/master/charts
+  - name: cilium
+    url: https://helm.cilium.io
+    source: https://github.com/cilium/cilium/tree/main/install/kubernetes
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
+    source: https://github.com/argoproj/argo-helm/tree/main/charts
+  - name: fluxcd-community
+    url: https://fluxcd-community.github.io/helm-charts
+    source: https://github.com/fluxcd-community/helm-charts/tree/main/charts
+  - name: sigstore
+    url: https://sigstore.github.io/helm-charts
+    source: https://github.com/sigstore/helm-charts/tree/main/charts
+  - name: gatekeeper
+    url: https://open-policy-agent.github.io/gatekeeper/charts
+    source: https://github.com/open-policy-agent/gatekeeper/tree/master/charts
+  - name: kyverno
+    url: https://kyverno.github.io/kyverno
+    source: https://github.com/kyverno/kyverno/tree/main/charts
+  - name: stakater
+    url: https://stakater.github.io/stakater-charts
+    source: https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart
+  - name: aquasecurity
+    url: https://aquasecurity.github.io/helm-charts
+    source: https://github.com/aquasecurity/trivy-operator/tree/main/deploy/helm
+  - name: falcosecurity
+    url: https://falcosecurity.github.io/charts
+    source: https://github.com/falcosecurity/charts/tree/master/charts
+  - name: openebs
+    url: https://openebs.github.io/openebs
+    source: https://github.com/openebs/openebs/tree/main/charts
+  - name: rook
+    url: https://charts.rook.io/release
+    source: https://github.com/rook/rook/tree/master/deploy/charts
+  - name: longhorn
+    url: https://charts.longhorn.io
+    source: https://github.com/longhorn/charts/tree/master/charts
+  - name: kanister
+    url: https://charts.kanister.io
+    source: https://github.com/kanisterio/kanister/tree/master/helm
+  - name: vmware-tanzu
+    url: https://vmware-tanzu.github.io/helm-charts
+    source: https://github.com/vmware-tanzu/helm-charts/tree/main/charts
+  - name: jetstack
+    url: https://charts.jetstack.io
+    source: https://github.com/cert-manager/cert-manager/tree/master/deploy/charts
+  - name: metallb
+    url: https://metallb.github.io/metallb
+    source: https://github.com/metallb/metallb/tree/main/charts
+  - name: ingress-nginx
+    url: https://kubernetes.github.io/ingress-nginx
+    source: https://github.com/kubernetes/ingress-nginx/tree/main/charts
+  - name: istio
+    url: https://istio-release.storage.googleapis.com/charts
+    source: https://github.com/istio/istio/tree/master/manifests/charts
+  - name: kiali
+    url: https://kiali.org/helm-charts
+    source: https://github.com/kiali/helm-charts
+  - name: linkerd
+    url: https://helm.linkerd.io/edge
+    source: https://github.com/linkerd/linkerd2/tree/main/charts
+  - name: cnpg
+    url: https://cloudnative-pg.github.io/charts
+    source: https://github.com/cloudnative-pg/charts/tree/main/charts
+  - name: dex
+    url: https://charts.dexidp.io
+    source: https://github.com/dexidp/helm-charts/tree/master/charts
+  - name: oauth2-proxy
+    url: https://oauth2-proxy.github.io/manifests
+    source: https://github.com/oauth2-proxy/manifests/tree/main/helm
+  - name: prometheus-community
+    url: https://prometheus-community.github.io/helm-charts
+    source: https://github.com/prometheus-community/helm-charts/tree/main/charts
+  - name: crossplane-stable
+    url: https://charts.crossplane.io/stable
+    source: https://github.com/crossplane/crossplane/tree/main/cluster/charts
+  - name: coder-v2
+    url: https://helm.coder.com/v2
+    source: https://github.com/coder/coder/tree/main/helm
+  - name: cdf
+    url: https://cdfoundation.github.io/tekton-helm-chart
+    source: https://github.com/cdfoundation/tekton-helm-chart/tree/main/charts
+  - name: logging-operator
+    url: null
+    source: https://github.com/kube-logging/logging-operator/tree/master/charts
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+    source: https://github.com/bitnami/charts/tree/main/bitnami
